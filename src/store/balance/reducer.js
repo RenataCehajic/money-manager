@@ -1,3 +1,4 @@
+// src/store/balance/reducer.js
 const initialState = {
   amount: 0,
 };
@@ -5,12 +6,21 @@ const initialState = {
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case "balance/deposit": {
-      return { ...state, amount: state.amount + action.payload };
+      return {
+        ...state,
+        amount: state.amount + action.payload,
+      };
     }
     case "balance/withdraw": {
       return {
         ...state,
         amount: state.amount - action.payload,
+      };
+    }
+    case "balance/reset": {
+      return {
+        ...state,
+        amount: initialState.amount,
       };
     }
     default: {

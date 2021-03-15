@@ -4,6 +4,10 @@ export const deposit = (depositAmount) => ({
 });
 
 export const withdraw = (withdrawAmount) => ({
-  type: "balance/withdrwa",
+  type: "balance/withdraw",
   payload: withdrawAmount,
+});
+
+export const reset = () => ({
+  type: "balance/reset",
 });
